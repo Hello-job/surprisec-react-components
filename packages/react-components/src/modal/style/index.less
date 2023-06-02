@@ -1,0 +1,73 @@
+@import '../../style/config.less';
+
+@modalprefix: ~"@{surprisec-prefix}-modal";
+
+.@{modalprefix}{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    animation: modalShow 0.3s;
+    &-content{
+        position: relative;
+        width: 520px;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius: 6px;
+        background-color: #FFFFFF;
+        top: 100px;
+    }
+    &-centered{
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &-footer{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &-closecon{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 14px;
+        padding: 2px;
+        border-radius: 2px;
+        line-height: 0px;
+        &:hover{
+            background-color: #e0e0e0;
+        }
+        &-icon{
+            color: #8c8c8c;
+        }
+    }
+    &-title{
+        font-size: 14px;
+    }
+    &-confirm-content{
+        padding-bottom: 5px;
+        margin-bottom: 4px;
+    }
+    &-mask{
+        background-color: rgba(0, 0, 0, 0.45);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        inset-inline-end: 0;
+        inset-inline-start: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes modalShow{
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

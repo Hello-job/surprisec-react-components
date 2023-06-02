@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "surprisec-react-components": "workspace:^0.0.1"
+    "surprisec-react-components": "link:..\\react-components"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

@@ -2,9 +2,11 @@ import { ReactNode } from 'react'
 import Mask from './mask'
 import ReactDOM from 'react-dom'
 import Button from '../button'
-// import { Icon } from '@/components'
+import Icon from '../icon';
 import cls from 'classnames'
 import configModal from './configModal'
+import { getPrefix } from '../utils/config'
+import './style'
 
 interface ModalProps {
   title?: string
@@ -14,6 +16,7 @@ interface ModalProps {
   header?: ReactNode
   centered?: boolean
   closable?: boolean
+  className?: string
   onCancel?: () => void
   onOk?: () => void
 }
@@ -26,12 +29,14 @@ const Modal = ({
   centered,
   closable,
   header,
+  className,
   onOk,
   onCancel
 }: ModalProps) => {
+  const prefixCls = getPrefix('modal')
   const headerNode =
     header === undefined ? (
-      <div className="text-sm">
+      <div className={`${prefixCls}-title`}>
         <span>{title}</span>
       </div>
     ) : (
@@ -40,10 +45,10 @@ const Modal = ({
 
   const closeIcon = closable ? null : (
     <div
-      className=" absolute top-5 right-5 text-sm leading-none p-[2px] rounded-sm hover:bg-[#e0e0e0]"
+      className={`${prefixCls}-closecon`}
       onClick={() => onCancel && onCancel()}
     >
-      {/* <Icon className="text-textLight" type="iconclose11" /> */}
+      <Icon className={`${prefixCls}-closecon-icon`} type="iconclose11" />
     </div>
   )
 
@@ -51,13 +56,12 @@ const Modal = ({
 
   const renderFooter = () => {
     return footer === undefined ? (
-      <div className="flex justify-end items-center">
-        <Button className="mr-5" onClick={() => onCancel && onCancel()}>
+      <div className={`${prefixCls}-footer`}>
+        <Button style={{marginRight: 20}} onClick={() => onCancel && onCancel()}>
           取消
         </Button>
         <Button
           type="primary"
-          className="bg-violet"
           onClick={() => onOk && onOk()}
         >
           确认
@@ -69,16 +73,18 @@ const Modal = ({
   }
 
   return ReactDOM.createPortal(
-    <div className={`${open ? 'block' : 'hidden'}`}>
+    <div style={{display: open ? 'block' : 'none'}}> 
       <Mask />
-      <div className="animate-modalShow  fixed inset-y-0 inset-x-0">
+      <div className={prefixCls}>
         <div
           className={cls(
-            'w-[520px]  p-5 mx-auto rounded-xl bg-white relative',
+            `${prefixCls}-content`,
             {
-              'top-1/2 -translate-y-1/2': centered,
-              ' top-[100px]': !centered
-            }
+                [`${prefixCls}-centered`]: centered,
+            //   'top-1/2 -translate-y-1/2': centered,
+            //   ' top-[100px]': !centered
+            },
+            className
           )}
         >
           {/* 头部区域 */}

@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { CumButton, Popover } from 'surprisec-react-components'
+import { Button, Popover, Modal } from 'surprisec-react-components'
 import 'surprisec-react-components/style'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [open, setOpen] = useState(false)
 
   return (
     <div className="App">
-      <CumButton />
-      <Popover>按钮</Popover>
+      <Button onClick={() => {
+        setOpen(true)
+      }}>测试</Button>
+      <Modal open={open} title="261D2B63.png标题"></Modal>
+
     </div>
   )
 }

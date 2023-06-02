@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import Button from '../button'
 import Modal from './index'
+import { getPrefix } from '../utils/config'
 
 interface Params {
   title: string
@@ -18,6 +19,7 @@ const configModal = ({
   onCancel,
   onConfirm
 }: Params) => {
+  const prefixCls = getPrefix('modal')
   const container = document.createElement('div')
 
   const root = createRoot(container)
@@ -28,13 +30,12 @@ const configModal = ({
   }
 
   const footer = (
-    <div className="flex justify-end items-center">
-      <Button className="mr-5" onClick={close}>
+    <div className={`${prefixCls}-footer`}>
+      <Button style={{marginRight: 20}} onClick={close}>
         {cancelText ?? '取消'}
       </Button>
       <Button
         type="primary"
-        className="bg-violet"
         onClick={() => {
           onConfirm()
           close()
@@ -47,7 +48,7 @@ const configModal = ({
 
   root.render(
     <Modal open={true} footer={footer} onCancel={close}>
-      <div className="pt-5 mb-4">{content}</div>
+      <div className={`${prefixCls}-confirm-content`}>{content}</div>
     </Modal>
   )
 

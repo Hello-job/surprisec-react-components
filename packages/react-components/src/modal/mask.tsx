@@ -1,6 +1,10 @@
+import './style'
+import { getPrefix } from '../utils/config'
+
+const prefixCls = getPrefix('modal')
 const Mask = () => {
   return (
-    <div className=" bg-mask w-screen h-screen fixed inset-y-0 start-0 end-0"></div>
+    <div className={`${prefixCls}-mask`}></div>
   );
 };
 
