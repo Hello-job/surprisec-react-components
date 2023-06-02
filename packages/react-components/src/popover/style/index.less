@@ -1,0 +1,36 @@
+.popover {
+}
+
+.popover-placement {
+  position: fixed;
+
+  .popover-content {
+    padding-top: 20px;
+    position: relative;
+    .popover-arrow {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 22px;
+      height: 22px;
+      overflow: hidden;
+      .popover-arrow-content {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        left: 50%;
+        bottom: -50%;
+        transform: rotate(45deg) translateX(-50%);
+        background: white;
+        box-shadow: 0px 1px 5px 0px #e0d9d9;
+      }
+    }
+    .popover-inner {
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0px 1px 5px 0px #e0d9d9;
+      padding: 10px;
+    }
+  }
+}
