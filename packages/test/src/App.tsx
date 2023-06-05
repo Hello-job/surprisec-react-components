@@ -11,7 +11,7 @@ function App() {
       <Button onClick={() => {
         setOpen(true)
       }}>测试</Button>
-      <Modal open={open} title="261D2B63.png标题"></Modal>
+      <Modal open={open} title="261D2B63.png标题" width={200}></Modal>
 
     </div>
   )

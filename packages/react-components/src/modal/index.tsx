@@ -17,6 +17,7 @@ interface ModalProps {
   centered?: boolean
   closable?: boolean
   className?: string
+  width?: number | string
   onCancel?: () => void
   onOk?: () => void
 }
@@ -30,6 +31,7 @@ const Modal = ({
   closable,
   header,
   className,
+  width = 520,
   onOk,
   onCancel
 }: ModalProps) => {
@@ -72,6 +74,7 @@ const Modal = ({
     )
   }
 
+
   return ReactDOM.createPortal(
     <div style={{display: open ? 'block' : 'none'}}> 
       <Mask />
@@ -81,11 +84,10 @@ const Modal = ({
             `${prefixCls}-content`,
             {
                 [`${prefixCls}-centered`]: centered,
-            //   'top-1/2 -translate-y-1/2': centered,
-            //   ' top-[100px]': !centered
             },
             className
           )}
+          style={{ width: typeof width === 'string' ? isNaN(parseInt(width)) ? width : width + 'px' : width}}
         >
           {/* 头部区域 */}
           {headerNode}
