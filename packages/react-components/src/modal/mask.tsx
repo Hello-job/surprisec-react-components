@@ -1,11 +1,9 @@
-import './style'
-import { getPrefix } from '../utils/config'
+import './style';
+import { getPrefix } from '../utils/config';
 
-const prefixCls = getPrefix('modal')
+const prefixCls = getPrefix('modal');
 const Mask = () => {
-  return (
-    <div className={`${prefixCls}-mask`}></div>
-  );
+  return <div className={`${prefixCls}-mask`} />;
 };
 
 export default Mask;

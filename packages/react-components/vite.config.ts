@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import path from 'path'
-import react from '@vitejs/plugin-react'
-import typescript from '@rollup/plugin-typescript'
+import { defineConfig } from 'vite';
+import path from 'path';
+import react from '@vitejs/plugin-react';
+import typescript from '@rollup/plugin-typescript';
 
 function resolve(str: string) {
-  return path.resolve(__dirname, str)
+  return path.resolve(__dirname, str);
 }
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,8 +16,8 @@ export default defineConfig({
       declaration: true,
       declarationDir: resolve('dist'),
       exclude: resolve('node_modules/**'),
-      allowSyntheticDefaultImports: true
-    })
+      allowSyntheticDefaultImports: true,
+    }),
   ],
   build: {
     // 输出文件
@@ -30,10 +30,10 @@ export default defineConfig({
       // 打包后文件名
       fileName: 'build',
       // 打包格式
-      formats: ['es', 'cjs']
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom']
-    }
-  }
-})
+      external: ['react', 'react-dom'],
+    },
+  },
+});
