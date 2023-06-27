@@ -2,6 +2,22 @@
 
 @modalprefix: ~"@{surprisec-prefix}-loding";
 
+.@{modalprefix}{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    background-color: hsla(0,0%,100%,.9);
+    transition: opacity .3s;
+}
+
+.@{modalprefix}-content{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
 .@{modalprefix}-mouth{
     fill: none;
     stroke: #7b67ee;
@@ -12,7 +28,7 @@
     animation: mounthAni 2.3s ease-out infinite;
 }
 
-.@{modalprefix}-eye {
+.@{modalprefix}-eye{
     fill: none;
     stroke: #7b67ee;
     stroke-width: 5;
