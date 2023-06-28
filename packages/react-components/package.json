@@ -1,6 +1,6 @@
 {
   "name": "surprisec-react-components",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "type": "module",
   "main": "./dist/build.cjs",
   "module": "./dist/build.js",
@@ -15,6 +15,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "git-checks": false
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

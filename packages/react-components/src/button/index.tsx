@@ -9,12 +9,13 @@ interface ButtonProps {
   style?: CSSProperties;
   children?: ReactNode | string;
   type?: 'primary' | 'link' | 'default';
+  icon?: ReactNode;
   onClick?: () => void;
 }
 
 const prefixCls = getPrefix('btn');
 
-const Button = ({ children, className, style, type = 'default', onClick }: ButtonProps) => {
+const Button = ({ children, className, style, type = 'default', icon, onClick }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -27,6 +28,7 @@ const Button = ({ children, className, style, type = 'default', onClick }: Butto
         className
       )}
     >
+      <span className={`${prefixCls}-icon`}>{icon}</span>
       <span>{children}</span>
     </button>
   );

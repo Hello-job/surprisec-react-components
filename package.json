@@ -2,12 +2,16 @@
   "name": "task-components",
   "version": "1.0.0",
   "description": "",
+  "publishConfig": {
+    "git-checks": false
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm --filter test dev",
+    "dev:com": "pnpm --filter surprisec-react-components dev",
     "build": "pnpm --filter surprisec-react-components build",
     "link": "pnpm --filter surprisec-react-components run link",
-    "publish": "pnpm --filter surprisec-react-components publish",
+    "publish": "pnpm --filter surprisec-react-components publish --no-git-checks",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./"
   },
   "keywords": [],
