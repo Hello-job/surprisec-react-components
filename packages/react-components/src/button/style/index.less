@@ -4,11 +4,14 @@
 @btnprefix:~ "@{surprisec-prefix}-btn";
 
 .@{btnprefix}{
+    display: inline-block;
+    word-wrap: normal;
     font-size: 14px;
     border-radius: 4px;
-    padding: 4px 11px;
+    padding: 4px 15px;
     box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
     border: 1px solid transparent;
+    line-height: 22px;
     &-default{
         background-color: #ffffff;
         border-color: #d9d9d9;
@@ -16,6 +19,9 @@
     &-primary{
         background-color: @violet-1;
         color: white;
+    }
+    span{
+        display: inline-block;
     }
 }
 

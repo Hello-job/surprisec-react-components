@@ -27,7 +27,7 @@ const Button = ({ children, className, style, type = 'default', onClick }: Butto
         className
       )}
     >
-      {children}
+      <span>{children}</span>
     </button>
   );
 };
