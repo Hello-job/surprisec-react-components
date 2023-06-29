@@ -28,7 +28,7 @@ const Button = ({ children, className, style, type = 'default', icon, onClick }:
         className
       )}
     >
-      <span className={`${prefixCls}-icon`}>{icon}</span>
+      {icon && <span className={`${prefixCls}-icon`}>{icon}</span>}
       <span>{children}</span>
     </button>
   );
