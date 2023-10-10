@@ -45,11 +45,13 @@ const Modal = ({
       header
     );
 
-  const closeIcon = closable ? null : (
-    <div className={`${prefixCls}-closecon`} onClick={() => onCancel && onCancel()}>
-      <Icon className={`${prefixCls}-closecon-icon`} type="iconclose11" />
-    </div>
-  );
+  const closeIcon = () => {
+    return closable ? null : (
+      <div className={`${prefixCls}-closecon`} onClick={() => onCancel && onCancel()}>
+        <Icon className={`${prefixCls}-closecon-icon`} type="iconclose11" />
+      </div>
+    );
+  };
 
   const content = <div className="mb-5">{children}</div>;
 
@@ -85,7 +87,7 @@ const Modal = ({
           {/* 头部区域 */}
           {headerNode}
           {/* 关闭按钮 */}
-          {closeIcon}
+          {closeIcon()}
           {/* 中间内容 */}
           {content}
           {renderFooter()}

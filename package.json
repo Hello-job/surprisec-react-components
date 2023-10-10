@@ -11,7 +11,7 @@
     "dev:com": "pnpm --filter surprisec-react-components dev",
     "build": "pnpm --filter surprisec-react-components build",
     "link": "pnpm --filter surprisec-react-components run link",
-    "publish": "pnpm --filter surprisec-react-components publish --no-git-checks",
+    "publish": "pnpm --filter surprisec-react-components run publish",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./"
   },
   "keywords": [],
