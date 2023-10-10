@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import Button from '../button';
-import Modal from './index';
+import ModalContent from './modalBox';
 import { getPrefix } from '../utils/config';
 
 interface Params {
@@ -41,9 +41,9 @@ const configModal = ({ content, cancelText, confirmText, onCancel, onConfirm }: 
   );
 
   root.render(
-    <Modal open={true} footer={footer} onCancel={close}>
+    <ModalContent open={true} footer={footer} onCancel={close}>
       <div className={`${prefixCls}-confirm-content`}>{content}</div>
-    </Modal>
+    </ModalContent>
   );
 
   return { close };

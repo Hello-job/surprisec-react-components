@@ -1,6 +1,6 @@
 {
   "name": "surprisec-react-components",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "type": "module",
   "main": "./dist/build.cjs",
   "module": "./dist/build.js",
@@ -22,8 +22,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "link": "pnpm link --global",
-    "test": "vitest",
-    "publish": "pnpm publish --no-git-checks"
+    "test": "vitest"
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.4",
